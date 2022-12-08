@@ -11,14 +11,15 @@
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <div class="container">
                         <div class="row">
-                            <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" *ngFor="let j of viewData">
                                <br>
-                                <div class="card" >
-                                    <img src="https://www.pngitem.com/pimgs/m/27-272007_transparent-product-icon-png-product-vector-icon-png.png" height="200" width="200" class="card-img-top" alt="...">
+                                <div class="card"  >
+                                    <img src={{j.image}} height="200" width="200" class="card-img-top" alt="...">
                                     <div class="card-body">
-                                      <h5 class="card-title"></h5>
-                                      <p class="card-text">Health History</p>
-                                      <p class="card-text"></p>
+                                      <h5 class="card-title">{{j.name}}</h5>
+                                      <p class="card-text">{{j.category}}</p>
+                                      <p class="card-text">{{j.price}}</p>
+                                      <button class="btn btn-dark">Know more</button>
                 
                                     </div>
                                   </div>
@@ -64,13 +65,13 @@
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    <tr >
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                    </tr>
+                                    <tr *ngFor="let j of searchData">
+                                        <td>{{j.name}}</td>
+                                        <td>{{j.category}}</td>
+                                        <td>{{j.description}}</td>
+                                        <td>{{j.price}}</td>
+                                        <td>{{j.image}}</td>
+                                      </tr>
                                   </tbody>
                               </table>     
                     </div>

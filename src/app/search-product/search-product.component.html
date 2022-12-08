@@ -25,6 +25,7 @@
          </div>
     </div>
     <div class="row">
+        <div class="overflow-hidden">
         <table class="table">
             <thead>
                 <tr>
@@ -36,15 +37,17 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                <tr *ngFor="let j of searchData">
+                  <td>{{j.name}}</td>
+                  <td>{{j.category}}</td>
+                  <td>{{j.description}}</td>
+                  <td>{{j.price}}</td>
+                  <td>{{j.image}}</td>
                 </tr>
               </tbody>
           </table>     
+</div>
+</div>
 </div>
 
 

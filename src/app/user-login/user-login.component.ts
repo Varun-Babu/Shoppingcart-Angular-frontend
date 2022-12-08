@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-user-login',
@@ -10,19 +11,25 @@ export class UserLoginComponent {
   password=""
   email=""
 
-  constructor(private route:Router){}
+  constructor(private api:ApiService,private route:Router){}
 
   readValue = () =>{
-    let data:any = {"email":this.email,"Password":this.password}
+    let data:any = {"email":this.email,"password":this.password}
     console.log(data)
-
-    if (this.email=="user@gmail.com" && this.password=="23" ) {
-      this.route.navigate(['/userpanel'])
-      
-    } else {
-      alert("invalid credentials")
-      
+    this.api.userLogin(data).subscribe(
+      (response: any) => {
+        this.email = ""
+        this.password = ""
+        if (response.status == "success") {
+          alert(response.message)
+          this.route.navigate(["/userpanel"])
+        } else {
+          alert(response.message)
+        }
+      }
+    )
+    
     }
   }
 
-}
+

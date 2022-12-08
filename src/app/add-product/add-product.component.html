@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="row g-3">
+                <h1 style="text-align: center;">ADD PRODUCTS</h1>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="form-label">Name</label>
+                    <input name="name" [(ngModel)]="name" type="text" class="form-control">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="form-label">Image Link</label>
+                    <input name="image" [(ngModel)]="image" type="text" class="form-control">
+                </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+
+                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                        <textarea name="description" [(ngModel)]="description"class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                      </div>
+                <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <label for="" class="form-label">Price</label>
+                    <input name="price" [(ngModel)]="price" type="text" class="form-control">
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                    <button (click)="readValue()" class="btn btn-outline-dark">Submit >></button>
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                   <p>Go back to <a routerLink="" >Admin page </a><span> |</span> Already an user <a routerLink="/userlogin"> Login Here</a> </p>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
